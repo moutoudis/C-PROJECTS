@@ -1,0 +1,46 @@
+/* My name is Christos Moutoudis and this is my first project in c.I created a 
+calculate that does addition and subtraction, multiplication, and division*/
+
+
+#include <stdio.h>
+
+int main()
+{
+    char operator;
+    double number1, number2, result;
+
+    printf("Give operator (+, -, *, /): ");
+    scanf(" %c", &operator);  
+
+    printf("Give me two numbers: ");
+    scanf("%lf %lf", &number1, &number2);
+
+    switch (operator)
+    {
+    case '+':
+        result = number1 + number2;
+        printf("The result is: %.1f\n", result);
+        break;
+    case '-':
+        result = number1 - number2;
+        printf("The result is: %.1f\n", result);
+        break;
+    case '*':
+        result = number1 * number2;
+        printf("The result is: %.1f\n", result);
+        break;
+    case '/':
+        if (number2 != 0) {
+            result = number1 / number2;
+            printf("The result is: %.1f\n", result);
+        } else {
+            printf("Error: you can't divide by 0\n");
+            return 1;
+        }
+        break;
+    default:
+        printf("Invalid operation\n");
+    }
+
+    return 0;
+}
